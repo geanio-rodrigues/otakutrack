@@ -71,3 +71,79 @@ body {
 .auth-buttons a:hover {
     color: #f43730;
 }
+/* Parte de Sections (Main) */
+section{
+    background-color: #201B37;
+    padding: 50px;
+}
+
+.first-section-title, .second-section-title, .card-title, .card-rate{
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #d2ccf0;
+}
+
+.first-section-title, .second-section-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 40px;
+}
+
+/* Conteúdo dos Cards */
+.card-content{
+    padding: 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+    background-color: #2A234F;
+    margin: 20px;
+    width: 360px;
+    border-radius: 20px;
+    border: 3.5px solid black;
+    box-shadow: 5px 5px 5px black;
+    transition: 0.3s ease 0.1s;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card-title{
+    font-size: 28px;
+}
+
+.card-img{
+    object-fit: cover;
+    width: 270px;
+    height: 370px;
+    border-radius: 20px;
+}
+
+.card-rate{
+    font-size: 20px;
+}
+
+/* Configuração pra se adaptar ao mobile */
+@media (max-width: 1024px) {
+    .card-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card-content {
+      grid-template-columns: 1fr;
+    }
+  }
