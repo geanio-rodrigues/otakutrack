@@ -37,17 +37,65 @@
         </nav>
     </header>
     <main class="main-content">
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Explore o Universo Otaku</h1>
+                <p class="hero-subtitle">Descubra os melhores animes, mangás e as últimas notícias do mundo nerd</p>
+                <div class="hero-buttons">
+                    <a href="#animes" class="hero-btn anime-btn">Ver Animes</a>
+                    <a href="#mangas" class="hero-btn manga-btn">Ver Mangás</a>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+
         <!-- Noticia Inicial-->
-        <section class="news-container">
-            <div class="news-content">
-                <h2>As últimas notícias sobre <span class="highlight">One Piece </h2>
-                <p>O retorno do anime com a segunda parte do arco de <span class="highlightP">Egghead</span>, em abril,
-                    conquistou incriveis avaliações,
-                    o hiato prolongado do anime foi para melhorar a qualidade de animação e produção, e a possibilidade
-                    do mangá ser encerrado nos próximos cinco
-                    anos. A <span class="highlightP">Netflix</span> também está a desenvolver um novo anime baseado no
-                    trabalho de Eiichiro Oda, além da
-                    série live-action que já tem uma segunda temporada confirmada.</p>
+        <section class="news-section">
+            <!-- Notícia Destaque -->
+            <div class="news-container">
+                <div class="news-content">
+                    <h2>As últimas notícias sobre <span class="highlight">One Piece</span></h2>
+                    <p>O retorno do anime com a segunda parte do arco de <span class="highlightP">Egghead</span>, em
+                        abril,
+                        conquistou incríveis avaliações,
+                        o hiato prolongado do anime foi para melhorar a qualidade de animação e produção, e a
+                        possibilidade
+                        do mangá ser encerrado nos próximos cinco
+                        anos. A <span class="highlightP">Netflix</span> também está a desenvolver um novo anime baseado
+                        no
+                        trabalho de Eiichiro Oda, além da
+                        série live-action que já tem uma segunda temporada confirmada.</p>
+                    <a href="#" class="read-more">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Lista de Notícias Secundárias -->
+            <div class="secondary-news">
+                <h3 class="secondary-news-title">Outras Notícias</h3>
+                <div class="news-list">
+                    <article class="news-item">
+                        <h4>De surpresa, novo anime de Yu-Gi-Oh! é lançado de graça!</h4>
+                        <p>Yu-Gi-Oh! Card Game The Chronicles vai ganhar um episódio gratuito por mês através do
+                            YouTube...</p>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </article>
+
+                    <article class="news-item">
+                        <h4>Quase um 'Cowboy Bebop'? Anime 'Lazarus' chegou com parkour e brasileiro</h4>
+                        <p>"Lazarus" é um anime original produzido pelo Adult Swim, canal norte-americano da Warner
+                            Discovery focado em animação para adultos...</p>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </article>
+
+                    <article class="news-item">
+                        <h4>Dandadan confirma estreia da 2ª temporada com trailer ANIMAL</h4>
+                        <p>Dandadan confirma a estreia da segunda temporada do anime para julho de 2025, com antestreia
+                            nos cinemas em junho...</p>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -55,20 +103,20 @@
 
         <!-- Primeira Seção -->
 
-        <section class="first-section">
+        <section class="first-section" id="animes">
             <hr>
             <h1 class="first-section-title">
                 Animes Populares
             </h1>
             <hr>
-            
+
             <div class="card-content">
 
                 <article class="card">
                     <h2 class="card-title">Solo Leveling</h2>
                     <img src="img/Solo.png" alt="Solo Leveling" class="card-img">
                     <p class="card-rate">Classificação Média: 4.9 (773.7k)</p>
-                    <span class="card-tooltip tooltipAlto">Baseado em Webtoon coreano.Sung Jin-Woo ganha o poder de
+                    <span class="card-tooltip tooltipAlto">Baseado em Webtoon coreano. Sung Jin-Woo ganha o poder de
                         evoluir infinitamente após sobreviver a uma dungeon mortal. Acompanhe sua ascensão como o
                         caçador mais forte do mundo.</span>
                 </article>
@@ -121,7 +169,7 @@
         </section>
         <!-- Segunda Seção -->
 
-        <section class="second-section">
+        <section class="second-section" id="mangas">
             <h1 class="second-section-title">
                 Mangás Populares
             </h1>
