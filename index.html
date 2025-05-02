@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logo_ico.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo/logo_ico.ico" type="image/x-icon">
     <title>Otaku Track</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- Fonte Quicksand -->
@@ -23,16 +23,48 @@
         <nav class="navbar">
             <div class="logo">
                 <a href="#">
-                    <img src="img/logo.png" alt="OtakuTrack_Logo">
+                    <img src="img/logo/logo.png" alt="OtakuTrack_Logo" id="logo-desktop">
+                    <img src="img/logo/logo_ico.png" alt="OtakuTrack_Logo" id="logo-mobile">
                 </a>
             </div>
+            
             <div class="search-bar">
-                <input type="text" placeholder="Buscar...">
-                <button><i class="fas fa-search"></i></button>
+                <!-- Links visíveis em telas grandes -->
+                <div class="search-links">
+                    <a href="#animes">Animes</a>
+                    <a href="#mangas">Mangás</a>
+                    <a href="#news">Novidades</a>
+                </div>
+            
+                <!-- Dropdown visível em telas pequenas -->
+                <div class="search-dropdown">
+                    <select onchange="location.href=this.value">
+                        <option value="">Categorias</option>
+                        <option value="#animes">Animes</option>
+                        <option value="#mangas">Mangás</option>
+                        <option value="#news">Novidades</option>
+                    </select>
+                </div>
             </div>
+
             <div class="auth-buttons">
-                <a href="#">Entrar</a>
-                <a href="#">Criar Conta</a>
+                <!-- Para telas grandes -->
+                <div class="auth-desktop">
+                    <a href="#">Entrar</a>
+                    <a href="#">Criar Conta</a>
+                </div>
+            
+                <!-- Para telas pequenas -->
+                <div class="auth-mobile">
+                    <input type="checkbox" id="auth-toggle" hidden>
+                    <label for="auth-toggle" class="auth-icon">
+                        <i class="fas fa-user"></i>
+                    </label>
+                    <div class="auth-menu">
+                        <a href="#">Entrar</a>
+                        <a href="#">Criar Conta</a>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -54,7 +86,7 @@
         <!-- Noticia Inicial-->
         <section class="news-section">
             <!-- Notícia Destaque -->
-            <div class="news-container">
+            <div class="news-container" id="news">
                 <div class="news-content">
                     <h2>As últimas notícias sobre <span class="highlight">One Piece</span></h2>
                     <p>O retorno do anime com a segunda parte do arco de <span class="highlightP">Egghead</span>, em
