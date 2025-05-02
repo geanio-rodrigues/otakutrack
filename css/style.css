@@ -291,7 +291,7 @@ body {
 /* Parte de Sections (Main) */
 section{
     /* background-color: #201B37; */
-    padding: 50px;
+    padding: 1rem;
 }
 hr{
     border: none;
@@ -392,6 +392,20 @@ hr{
 }
 
 /* Configuração pra se adaptar ao mobile */
+@media (max-width: 576px) {
+    .hero-title{
+        margin-top: 4rem;
+        font-size: 3rem;
+    }.hero-subtitle{
+        font-size: 1.7rem;
+    }
+    .news-content h2{
+        font-size: 1.5rem;
+    }
+    .section{
+        padding: 0;
+    }
+}
 @media (max-width: 1024px) {
     .card-content {
       grid-template-columns: repeat(2, 1fr);
@@ -405,10 +419,6 @@ hr{
     /*noticia inicial*/
     .news-content {
         padding: 1.5rem;
-    }
-
-    .news-content h2 {
-        font-size: 2rem;
     }
 
     .news-content p {
