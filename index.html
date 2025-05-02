@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,16 @@
     <title>Otaku Track</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- Fonte Quicksand -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -32,16 +36,79 @@
             </div>
         </nav>
     </header>
-
     <main class="main-content">
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Explore o Universo Otaku</h1>
+                <p class="hero-subtitle">Descubra os melhores animes, mangás e as últimas notícias do mundo nerd</p>
+                <div class="hero-buttons">
+                    <a href="#animes" class="hero-btn anime-btn">Ver Animes</a>
+                    <a href="#mangas" class="hero-btn manga-btn">Ver Mangás</a>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+
+        <!-- Noticia Inicial-->
+        <section class="news-section">
+            <!-- Notícia Destaque -->
+            <div class="news-container">
+                <div class="news-content">
+                    <h2>As últimas notícias sobre <span class="highlight">One Piece</span></h2>
+                    <p>O retorno do anime com a segunda parte do arco de <span class="highlightP">Egghead</span>, em
+                        abril,
+                        conquistou incríveis avaliações,
+                        o hiato prolongado do anime foi para melhorar a qualidade de animação e produção, e a
+                        possibilidade
+                        do mangá ser encerrado nos próximos cinco
+                        anos. A <span class="highlightP">Netflix</span> também está a desenvolver um novo anime baseado
+                        no
+                        trabalho de Eiichiro Oda, além da
+                        série live-action que já tem uma segunda temporada confirmada.</p>
+                    <a href="#" class="read-more">Leia mais <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Lista de Notícias Secundárias -->
+            <div class="secondary-news">
+                <h3 class="secondary-news-title">Outras Notícias</h3>
+                <div class="news-list">
+                    <article class="news-item">
+                        <h4>De surpresa, novo anime de Yu-Gi-Oh! é lançado de graça!</h4>
+                        <p>Yu-Gi-Oh! Card Game The Chronicles vai ganhar um episódio gratuito por mês através do
+                            YouTube...</p>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </article>
+
+                    <article class="news-item">
+                        <h4>Quase um 'Cowboy Bebop'? Anime 'Lazarus' chegou com parkour e brasileiro</h4>
+                        <p>"Lazarus" é um anime original produzido pelo Adult Swim, canal norte-americano da Warner
+                            Discovery focado em animação para adultos...</p>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </article>
+
+                    <article class="news-item">
+                        <h4>Dandadan confirma estreia da 2ª temporada com trailer ANIMAL</h4>
+                        <p>Dandadan confirma a estreia da segunda temporada do anime para julho de 2025, com antestreia
+                            nos cinemas em junho...</p>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <!-- Onde vão ficar nossas seções -->
 
         <!-- Primeira Seção -->
 
-        <section class="first-section">
+        <section class="first-section" id="animes">
+            <hr>
             <h1 class="first-section-title">
                 Animes Populares
             </h1>
+            <hr>
 
             <div class="card-content">
 
@@ -49,43 +116,60 @@
                     <h2 class="card-title">Solo Leveling</h2>
                     <img src="img/Solo.png" alt="Solo Leveling" class="card-img">
                     <p class="card-rate">Classificação Média: 4.9 (773.7k)</p>
+                    <span class="card-tooltip tooltipAlto">Baseado em Webtoon coreano. Sung Jin-Woo ganha o poder de
+                        evoluir infinitamente após sobreviver a uma dungeon mortal. Acompanhe sua ascensão como o
+                        caçador mais forte do mundo.</span>
                 </article>
 
                 <article class="card">
                     <h2 class="card-title">One Piece</h2>
                     <img src="img/OnePiece.png" alt="One Piece" class="card-img">
                     <p class="card-rate">Classificação Média: 4.8 (648.1k)</p>
+                    <span class="card-tooltip tooltipAlto">Monkey D. Luffy parte em uma jornada pelos mares com sua
+                        tripulação em busca do lendário tesouro “One Piece” para se tornar o Rei dos Piratas.</span>
                 </article>
 
                 <article class="card">
                     <h2 class="card-title">Diários de uma Apotecária</h2>
                     <img src="img/Diary.png" alt="Diário de uma Apotecária" class="card-img">
                     <p class="card-rate">Classificação Média: 4.9 (230.3k)</p>
+                    <span class="card-tooltip tooltipAlto">Maomao, uma jovem apotecária inteligente, é levada ao palácio
+                        imperial e acaba se envolvendo em mistérios da corte usando seus conhecimentos de
+                        medicina.</span>
                 </article>
 
                 <article class="card">
                     <h2 class="card-title">To be Hero X</h2>
                     <img src="img/X.png" alt="To be Hero X" class="card-img">
                     <p class="card-rate">Classificação Média: 4.8 (23.8k)</p>
+                    <span class="card-tooltip tooltipBaixo">Uma comédia sci-fi onde um homem comum se torna um
+                        super-herói relutante após um evento bizarro. Uma mistura insana de ação, humor e crítica
+                        social.</span>
                 </article>
 
                 <article class="card">
                     <h2 class="card-title">Dragon Ball DAIMA</h2>
                     <img src="img/DBZ.png" alt="DB DAIMA" class="card-img">
                     <p class="card-rate">Classificação Média: 4.7 (62.2k)</p>
+                    <span class="card-tooltip tooltipBaixo">Goku e seus amigos são transformados em crianças por uma
+                        conspiração misteriosa e precisam recuperar suas forças e descobrir o culpado para salvar o
+                        universo.</span>
                 </article>
 
                 <article class="card">
                     <h2 class="card-title">Shangri-La Frontier</h2>
                     <img src="img/Shangri.png" alt="Shangri-La Frontier" class="card-img">
                     <p class="card-rate">Classificação Média: 4.8 (152k)</p>
+                    <span class="card-tooltip tooltipBaixo">Sunraku é um gamer hardcore que entra em um VRMMORPG de
+                        última geração. Lá, ele desafia chefões absurdamente difíceis e constrói sua reputação como
+                        lenda entre os jogadores.</span>
                 </article>
 
             </div>
         </section>
         <!-- Segunda Seção -->
 
-        <section class="second-section">
+        <section class="second-section" id="mangas">
             <h1 class="second-section-title">
                 Mangás Populares
             </h1>
@@ -96,45 +180,68 @@
                     <h2 class="card-title">Jujutsu Kaizen</h2>
                     <img src="img/juju.png" alt="Jujutsu Kaizen" class="card-img">
                     <p class="card-rate">Classificação Média: 4.9 (524.8k)</p>
+                    <span class="card-tooltip tooltipAlto">
+                        Yuji Itadori se envolve com o mundo das maldições após engolir um artefato poderoso.
+                         Agora, ele enfrenta espíritos perigosos ao lado de feiticeiros para proteger a humanidade.</span>
                 </article>
 
                 <article class="card">
                     <h2 class="card-title">Berserk</h2>
                     <img src="img/Berserk.png" alt="Berserk" class="card-img">
                     <p class="card-rate">Classificação Média: 4.8 (375.6k)</p>
+                    <span class="card-tooltip tooltipAlto">
+                        Guts é um guerreiro solitário em busca de vingança contra um antigo aliado que o traiu.
+                         Em um mundo brutal e sombrio, ele enfrenta demônios e guerras com sua enorme espada.
+                    </span>
                 </article>
 
                 <article class="card">
                     <h2 class="card-title">Chainsaw Man</h2>
                     <img src="img/chain.png" alt="Chainsaw Man" class="card-img">
                     <p class="card-rate">Classificação Média: 4.9 (389.9k)</p>
+                    <span class="card-tooltip tooltipAlto">Baseado em Webtoon coreano. Sung Jin-Woo ganha o poder de
+                        evoluir infinitamente após sobreviver a uma dungeon mortal. Acompanhe sua ascensão como o
+                        caçador mais forte do mundo.</span>
                 </article>
 
                 <article class="card">
                     <h2 class="card-title">One Piece</h2>
                     <img src="img/OnePiece2.png" alt="One Piece" class="card-img">
                     <p class="card-rate">Classificação Média: 4.8 (649.3k)</p>
+                    <span class="card-tooltip tooltipBaixo">
+                        Denji ganha poderes ao se fundir com seu demônio-serra elétrica.
+                         Como caçador oficial, ele enfrenta monstros cruéis enquanto tenta viver uma vida digna — e encontrar amor.
+                    </span>
+                    
                 </article>
 
                 <article class="card">
                     <h2 class="card-title">DAN DA DAN</h2>
                     <img src="img/Dandadan.png" alt="Dandadan" class="card-img">
                     <p class="card-rate">Classificação Média: 4.9 (183k)</p>
+                    <span class="card-tooltip tooltipBaixo">
+                        Após um desafio sobrenatural, Momo e Okarun enfrentam juntos alienígenas, fantasmas e maldições bizarras
+                         — enquanto descobrem forças ocultas dentro de si.</span>
                 </article>
 
                 <article class="card">
                     <h2 class="card-title">Death Note</h2>
                     <img src="img/Death.png" alt="Death Note" class="card-img">
                     <p class="card-rate">Classificação Média: 4.7 (236.2k)</p>
+                    <span class="card-tooltip tooltipBaixo">
+                        Light Yagami encontra um caderno que mata quem tem o nome escrito nele.
+                         Decidido a “limpar” o mundo, ele trava uma batalha de inteligência contra o misterioso detetive L.
+                    </span>
                 </article>
 
             </div>
         </section>
-        
+
     </main>
 
     <footer>
         <p>&copy; OtakuTrack</p>
     </footer>
 </body>
+
 </html>
