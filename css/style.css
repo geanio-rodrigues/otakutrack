@@ -473,10 +473,6 @@ hr{
   
   @media (max-width: 820px) {
     /* Barra de Navegação */
-    .main-content {
-        padding-top: 100px;
-    }
-
     #logo-desktop,
     .search-links,
     .auth-desktop{
