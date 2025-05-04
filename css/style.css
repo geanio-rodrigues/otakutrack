@@ -394,7 +394,7 @@ hr{
     background-color: #1e1e2f;
     color: #fff;
     padding: 10px;
-    width: 350px;
+    width: 17rem;
     height: 70px;
     font-size: 14px;
     z-index: 1;
@@ -420,7 +420,8 @@ hr{
 }
 
 .card-title{
-    font-size: 28px;
+    font-size: 25px;
+    text-align: center
 }
 
 .card-img{
@@ -448,6 +449,10 @@ hr{
     .section{
         padding: 0;
     }
+    .card{
+        width: 17em;
+    }
+
 }
 @media (max-width: 1024px) {
     .card-content {
