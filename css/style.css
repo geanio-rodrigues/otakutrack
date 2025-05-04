@@ -380,7 +380,7 @@ hr{
     gap: 15px;
     background-color: #2A234F;
     margin: 20px;
-    width: 360px;
+    width: 17rem;
     border-radius: 20px;
     border: 3.5px solid black;
     box-shadow: 5px 5px 5px black;
@@ -394,7 +394,7 @@ hr{
     background-color: #1e1e2f;
     color: #fff;
     padding: 10px;
-    width: 17rem;
+    width: 350px;
     height: 70px;
     font-size: 14px;
     z-index: 1;
