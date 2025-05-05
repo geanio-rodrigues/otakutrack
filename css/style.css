@@ -434,6 +434,16 @@ hr{
     font-size: 20px;
 }
 
+#footer-container{
+    background-image: linear-gradient(to right,#0f0827,#201b37);
+    padding: 20px;
+    text-align: center;
+}
+.link-git{
+    color: #7f92ff;
+    text-decoration: none ;
+}
+
 /* Configuração pra se adaptar ao mobile */
 @media (max-width: 576px) {
     .hero-title{
