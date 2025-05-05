@@ -362,7 +362,7 @@ hr{
 
 /* Conteúdo dos Cards */
 .card-content{
-    margin: 5em;
+    margin-top: -2em;
     padding: 70px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -380,7 +380,7 @@ hr{
     gap: 15px;
     background-color: #2A234F;
     margin: 20px;
-    width: 360px;
+    width: 17rem;
     border-radius: 20px;
     border: 3.5px solid black;
     box-shadow: 5px 5px 5px black;
@@ -394,9 +394,9 @@ hr{
     background-color: #1e1e2f;
     color: #fff;
     padding: 10px;
-    width: 350px;
+    width: 18rem;
     height: 70px;
-    font-size: 14px;
+    font-size: 12px;
     z-index: 1;
     border: 3.5px solid black;
     border-radius: 10px;
@@ -420,7 +420,8 @@ hr{
 }
 
 .card-title{
-    font-size: 28px;
+    font-size: 25px;
+    text-align: center;
 }
 
 .card-img{
