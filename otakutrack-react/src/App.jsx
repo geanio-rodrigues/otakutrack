@@ -1,10 +1,11 @@
 import React from 'react'
 import './App.css'
+import Navbar from './Navbar'
 
 function App() {
   return (
     <>
-      <h2 className='underline'>Navbar</h2>
+      <Navbar/>
       <h3>Body</h3>
       <h4>Footer</h4>
     </>
