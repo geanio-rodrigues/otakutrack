@@ -36,14 +36,13 @@ const navItems = [
 export default function Navbar() {
     const [isAuthMenuOpen, setAuthMenuOpen] = useState(false);
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [isCategoryMenuOpen, setCategoryMenuOpen] = useState(false);
 
     const navigate = useNavigate();
     const handleNavChange = (event) => {
-
     const path = event.target.value;
         if (path) {
             navigate(path);
+            setMobileMenuOpen(false)
         }
     };
 
