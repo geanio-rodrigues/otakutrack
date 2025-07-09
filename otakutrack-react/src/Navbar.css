@@ -1,0 +1,251 @@
+/* --- ESTRUTURA PRINCIPAL DA NAVBAR --- */
+.navbar {
+    background-color: #201b37;
+    width: 100%;
+    height: 70px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    box-sizing: border-box;
+}
+
+/* --- GRUPOS DE NAVEGAÇÃO (ESQUERDA E DIREITA) --- */
+.nav-group-left,
+.nav-group-right {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Espaçamento entre os itens */
+    height: 100%;
+}
+
+/* --- LOGO --- */
+.logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: inline-block;
+    height: 80%;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.logo img:hover {
+    opacity: 1;
+}
+
+#logo-mobile {
+    display: none;
+}
+
+/* --- LINKS DE NAVEGAÇÃO (DESKTOP) --- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    height: 100%;
+}
+
+.nav-links a,
+.nav-dropdown {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover,
+.nav-dropdown:hover {
+    color: #f43730;
+}
+
+.nav-dropdown {
+    padding: 0;
+}
+
+.nav-dropdown option {
+    background-color: #201b37;
+    border: none;
+    cursor: pointer;
+}
+
+/* --- BARRA DE PESQUISA --- */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    background-color: #141124;
+    border: 1px solid #3a3554;
+    border-radius: 4px;
+    height: 36px;
+    padding: 0 40px 0 12px;
+    color: #fff;
+    width: 250px;
+    transition: all 0.2s ease-in-out;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #f43730;
+    background-color: #000;
+}
+
+.search-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 40px;
+    background: transparent;
+    border: none;
+    color: #a09fb2;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-button:hover {
+    color: #fff;
+}
+
+/* --- AUTENTICAÇÃO (ÍCONE E MENU) --- */
+.auth-container {
+    position: relative;
+}
+
+.auth-icon {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.auth-icon:hover,
+.auth-icon.active {
+    background-color: #f43730;
+}
+
+.auth-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px); /* Posição abaixo do ícone */
+    right: 0;
+    background-color: #141124;
+    border-radius: 4px;
+    width: 200px;
+    overflow: hidden;
+    border: 1px solid #3a3554;
+    flex-direction: column;
+}
+
+.auth-menu.active {
+    display: flex;
+}
+
+.auth-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 16px;
+    font-size: 16px;
+}
+
+.auth-menu a:hover {
+    background-color: #f43730;
+}
+
+/* --- BOTÃO HAMBÚRGUER (MOBILE) --- */
+.mobile-menu-toggle {
+    display: none; /* Escondido no desktop */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVIDADE --- */
+/* Telas de Tablet e menores */
+@media (max-width: 1024px) {
+
+    .nav-links {
+        display: none; /* Esconde os links de navegação */
+    }
+
+    .mobile-menu-toggle {
+        display: block; /* Mostra o botão hambúrguer */
+    }
+
+    .nav-group-left {
+        gap: 16px;
+    }
+
+    .nav-group-right {
+        gap: 16px;
+    }
+
+    .search-bar input {
+        width: 150px;
+    }
+
+    /* Estilo do menu mobile quando ativo */
+    .nav-links.mobile-active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 65px; /* Abaixo da navbar */
+        left: 0;
+        width: 100%;
+        background-color: #201b37;
+        padding: 16px 0;
+        gap: 0;
+        border-bottom: 2px solid #f43730;
+    }
+
+    .nav-links.mobile-active a,
+    .nav-links.mobile-active .nav-dropdown {
+        padding: 16px 24px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+    }
+}
+
+/* Telas de Celular */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 16px;
+    }
+
+    #logo-desktop {
+        display: none;
+    }
+
+    #logo-mobile {
+        display: block;
+    }
+}
