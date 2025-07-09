@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import Login from './pages/Login'
 import CreateUser from './pages/CreateUser'
+import Footer from './Footer'
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Route path="/create-account" element={<CreateUser />} />
         </Routes>
         
-        <h4>Footer</h4>
+        <Footer/>
 
     </BrowserRouter>
   );
