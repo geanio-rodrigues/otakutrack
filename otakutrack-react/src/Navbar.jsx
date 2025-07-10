@@ -9,29 +9,18 @@ import { Link, useNavigate } from "react-router-dom";
 
 // Estrutura de dados para os links
 const navItems = [
-    {
-        type: 'link',
-        label: 'Novidades',
-        path: '/new'
-    },
-    {
-        type: 'link',
-        label: 'Populares',
-        path: '/popular'
-    },
-    {
-        type: 'dropdown',
-        label: 'Categorias',
-        options: [
-            { label: 'Todos', path: '/alphabetical' },
-            { label: 'Ação', path: '/action' },
-            { label: 'Aventura', path: '/adventure' },
-            { label: 'Comédia', path: '/comedy' },
-            { label: 'Drama', path: '/drama' },
-        ]
-    }
+  { type: 'link', label: 'Novidades', path: '/new' },
+  { type: 'link', label: 'Populares', path: '/popular' },
+  {
+    type: 'dropdown',
+    label: 'Categorias',
+    options: [
+      { label: 'Ação', path: '/action' },
+      { label: 'Aventura', path: '/adventure' },
+      { label: 'Drama', path: '/drama' },
+    ],
+  },
 ];
-
 
 export default function Navbar() {
     const [isAuthMenuOpen, setAuthMenuOpen] = useState(false);
