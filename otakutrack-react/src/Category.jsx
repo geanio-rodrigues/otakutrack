@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Cards.css';
+import Cards from './Cards';
 
 const genreIds = {
   action: 1,
@@ -60,25 +61,7 @@ export default function Category() {
       {loading ? (
         <p style={{ textAlign: 'center' }}>Carregando...</p>
       ) : (
-        <div className="cards-container">
-          {animes.map((anime, index) => (
-            <div className="anime-card" key={`${anime.mal_id}-${index}`}>
-              <img src={anime.images.jpg.image_url} alt={anime.title} />
-              <div className="card-content">
-                <h3>{anime.title}</h3>
-                <p>{anime.type} • {anime.episodes || '?'} eps</p>
-                <a
-                  href={anime.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="view-button"
-                >
-                  Ver mais
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Cards animes={animes} prefix={category} />
       )}
     </div>
   );
