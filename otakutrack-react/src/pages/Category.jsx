@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './Cards.css';
-import Cards from './Cards';
+import Cards from '../components/Cards';
 
 const genreIds = {
   action: 1,

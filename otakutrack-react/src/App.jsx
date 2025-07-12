@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-import Navbar from './Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 import Login from './pages/Login';
 import CreateUser from './pages/CreateUser';
-import Footer from './Footer';
-import New from './New';
-import Popular from './Popular'
-import Category from './Category';
+import New from './pages/New';
+import Popular from './pages/Popular'
+import Category from './pages/Category';
 
 function App() {
   return (

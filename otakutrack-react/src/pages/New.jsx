@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
-import Cards from "./Cards";
+import Cards from '../components/Cards';
 
-export default function Popular() {
+export default function New() {
   const [animeList, setAnimeList] = useState([]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      fetch("https://api.jikan.moe/v4/top/anime?limit=18")
+      fetch("https://api.jikan.moe/v4/anime?order_by=start_date&sort=desc&limit=18")
         .then(res => res.json())
         .then(data => setAnimeList(data.data));
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div>
-      <h2>Animes Populares</h2>
+      <h2>Novidades</h2>
       <Cards animes={animeList} />
     </div>
   );
