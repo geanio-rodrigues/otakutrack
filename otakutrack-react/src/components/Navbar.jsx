@@ -3,25 +3,11 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faSearch, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
+import { navItems } from "./Components/NavItems";
 
 import logoDesktop from "../assets/logo/logo.png";
 import logoMobile from "../assets/logo/logo_ico.png";
 
-
-// Estrutura de dados para os links
-const navItems = [
-  { type: 'link', label: 'Novidades', path: '/new' },
-  { type: 'link', label: 'Populares', path: '/popular' },
-  {
-    type: 'dropdown',
-    label: 'Categorias',
-    options: [
-      { label: 'Ação', path: '/action' },
-      { label: 'Aventura', path: '/adventure' },
-      { label: 'Drama', path: '/drama' },
-    ],
-  },
-];
 
 export default function Navbar() {
     const [isAuthMenuOpen, setAuthMenuOpen] = useState(false);
@@ -32,7 +18,7 @@ export default function Navbar() {
     const path = event.target.value;
         if (path) {
             navigate(path);
-            setMobileMenuOpen(false)
+            toggleMobileMenu();
         }
     };
 
@@ -65,7 +51,7 @@ export default function Navbar() {
                     <div className={`nav-links ${isMobileMenuOpen ? "mobile-active" : ""}`}>
                         {navItems.map((item, index) => {
                             if (item.type === 'link') {
-                                return <Link to={item.path} key={index}>{item.label}</Link>;
+                                return <Link to={item.path} key={index} onClick={toggleMobileMenu}>{item.label}</Link>;
                             }
                             if (item.type === 'dropdown') {
                                 return (

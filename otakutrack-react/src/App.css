@@ -8,3 +8,7 @@ body {
     background-image: linear-gradient(to right, #202020, #0f0827);
     color: white;
 }
+
+.content {
+    padding-top: 70px;
+}

@@ -15,12 +15,14 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<><New /><Popular /></>} />
-        <Route path="/:category" element={<Category />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/create-account" element={<CreateUser />} />
-      </Routes>
+        <main className='content'>
+          <Routes>
+              <Route path="/" element={<><New /><Popular /></>} />
+              <Route path="/:category" element={<Category />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/create-account" element={<CreateUser />} />
+          </Routes>
+        </main>
       <Footer />
     </BrowserRouter>
   );
