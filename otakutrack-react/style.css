@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@theme {
+    --color-bgblue: #0f0827;
+    --color-logored: #f43730;
+    --color-links: #7f92ff;
+    --color-linkshover: #a4b3ff;
+}

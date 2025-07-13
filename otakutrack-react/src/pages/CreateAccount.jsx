@@ -1,27 +1,28 @@
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Home() {
+export default function CreateAccount() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Tentativa de login com:', { email, password });
-        alert(`Login com: ${email}`);
+        console.log('Usuário criado com:', { email, password });
+        alert(`Conta Criada!`);
     };
     return (
         <Fragment>
             <main className="flex-grow flex flex-col items-center justify-center min-h-[75vh]">
 
                 <div className="text-center">
-                    <h2 className="teste">Login</h2>
+                    <h2 className="teste">Criar Conta</h2>
                 </div>
 
-                <div className="w-full max-w-sm p-4 sm:p-0">
+                <div className="w-full max-w-sm">
                     <form onSubmit={handleSubmit} className="w-full flex flex-col gap-8">
 
-                        <div className="relative mb-8">
+                        <div className="relative">
                             <input
                                 id="email"
                                 name="email"
@@ -39,7 +40,7 @@ export default function Home() {
                             </label>
                         </div>
 
-                        <div className="relative mb-4">
+                        <div className="relative">
                             <input
                                 id="password"
                                 name="password"
@@ -55,13 +56,25 @@ export default function Home() {
                             >
                                 Senha
                             </label>
-                            <div className="text-right mb-8">
-                                <a href="#" className="text-sm text-links hover:text-linkshover">
-                                    Esqueci minha senha
-                                </a>
-                            </div>
                         </div>
 
+                        <div className="relative">
+                            <input
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                type="password"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                placeholder=""
+                                className="block w-full px-0 py-2 text-white bg-transparent border-0 border-b-2 border-white appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            />
+                            <label
+                                htmlFor="confirmPassword"
+                                className="absolute text-base text-gray-500 duration-300 -translate-y-7 scale-75 top-0 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7"
+                            >
+                                Confirme Sua Senha
+                            </label>
+                        </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <button
@@ -71,9 +84,9 @@ export default function Home() {
                                 Criar Conta
                             </button>
                             <p className="text-sm text-center text-gray-500">
-                                Não tem uma conta?{' '}
+                                Já tem uma conta?{' '}
                                 <Link to="/login" className="font-medium text-links hover:text-linkshover">
-                                    Cadastre-se
+                                    Entrar
                                 </Link>
                             </p>
                         </div>
