@@ -6,7 +6,7 @@ export default function New() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      fetch("https://api.jikan.moe/v4/anime?order_by=start_date&sort=desc&limit=18")
+      fetch("https://api.jikan.moe/v4/anime?order_by=start_date&sort=desc&type=tv")
         .then(res => res.json())
         .then(data => setAnimeList(data.data));
     }, 500);

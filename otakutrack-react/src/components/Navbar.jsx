@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faSearch, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
-import { navItems } from "./Components/NavItems";
+import { navItems } from "./navItems";
 
 import logoDesktop from "../assets/logo/logo.png";
 import logoMobile from "../assets/logo/logo_ico.png";
