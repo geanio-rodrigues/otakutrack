@@ -6,7 +6,7 @@ export default function Popular() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      fetch("https://api.jikan.moe/v4/top/anime?limit=18")
+      fetch("https://api.jikan.moe/v4/anime?order_by=members&sort=desc")
         .then(res => res.json())
         .then(data => setAnimeList(data.data));
     }, 1000);
