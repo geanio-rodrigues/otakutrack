@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
+import Home from './pages/Home';
 import Footer from './components/Footer';
 
 import Login from './pages/Login';
@@ -17,6 +18,7 @@ function App() {
       <Navbar />
         <main className='content'>
           <Routes>
+              <Route path="/" element={<Home />} /> 
               <Route path="/" element={<><New /><Popular /></>} />
               <Route path="/:category" element={<Category />} />
               <Route path="/login" element={<Login />} />
