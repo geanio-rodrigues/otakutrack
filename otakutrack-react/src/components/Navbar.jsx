@@ -86,8 +86,8 @@ export default function Navbar() {
                             <FontAwesomeIcon icon={faUser} />
                         </button>
                         <div className={`auth-menu ${isAuthMenuOpen ? "active" : ""}`}>
-                            <Link to="/login">Entrar</Link>
-                            <Link to="/create-account">Criar Conta</Link>
+                            <Link to="/login" onClick={toggleAuthMenu}>Entrar</Link>
+                            <Link to="/create-account" onClick={toggleAuthMenu}>Criar Conta</Link>
                         </div>
                     </div>
                 </div>
