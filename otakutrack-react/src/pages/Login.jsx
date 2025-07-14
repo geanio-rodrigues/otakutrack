@@ -72,7 +72,7 @@ export default function Home() {
                             </button>
                             <p className="text-sm text-center text-gray-500">
                                 Não tem uma conta?{' '}
-                                <Link to="/login" className="font-medium text-links hover:text-linkshover">
+                                <Link to="/create-account" className="font-medium text-links hover:text-linkshover">
                                     Cadastre-se
                                 </Link>
                             </p>
