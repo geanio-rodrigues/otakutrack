@@ -1,8 +1,12 @@
 import './Hero.css';
-import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
-  const navigate = useNavigate();
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section className="hero">
@@ -12,13 +16,13 @@ const Hero = () => {
         <div className="hero-buttons">
           <button
             className="hero-btn novidades-btn"
-            onClick={() => navigate('/new')}
+            onClick={() => scrollToSection('new')}
           >
             Novidades
           </button>
           <button
             className="hero-btn popular-btn"
-            onClick={() => navigate('/popular')}
+            onClick={() => scrollToSection('popular')}
           >
             Populares
           </button>

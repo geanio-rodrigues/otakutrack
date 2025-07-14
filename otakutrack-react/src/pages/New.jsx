@@ -15,9 +15,9 @@ export default function New() {
   }, []);
 
   return (
-    <div>
+    <section id="new">
       <h2>Novidades</h2>
       <Cards animes={animeList} />
-    </div>
+    </section>
   );
 }

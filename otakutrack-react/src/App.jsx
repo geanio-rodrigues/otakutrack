@@ -18,8 +18,7 @@ function App() {
       <Navbar />
         <main className='content'>
           <Routes>
-              <Route path="/" element={<Home />} /> 
-              <Route path="/" element={<><New /><Popular /></>} />
+              <Route path="/" element={<><Home /><New /><Popular /></>} />
               <Route path="/:category" element={<Category />} />
               <Route path="/login" element={<Login />} />
               <Route path="/create-account" element={<CreateUser />} />

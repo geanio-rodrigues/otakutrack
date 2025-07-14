@@ -15,9 +15,9 @@ export default function Popular() {
   }, []);
 
   return (
-    <div>
+    <section id="popular">
       <h2>Animes Populares</h2>
       <Cards animes={animeList} />
-    </div>
+    </section>
   );
 }
