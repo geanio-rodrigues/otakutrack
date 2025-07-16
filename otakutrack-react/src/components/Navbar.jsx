@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faSearch, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { navItems } from "./navItems";
+import useAuthStore from "./authStore";
 
 import logoDesktop from "../assets/logo/logo.png";
 import logoMobile from "../assets/logo/logo_ico.png";
@@ -12,8 +13,18 @@ import logoMobile from "../assets/logo/logo_ico.png";
 export default function Navbar() {
     const [isAuthMenuOpen, setAuthMenuOpen] = useState(false);
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+    
+    const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+    const user = useAuthStore((state) => state.user);
+    const logout = useAuthStore((state) => state.logout);
 
     const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        toggleAuthMenu();
+    }
+
     const handleNavChange = (event) => {
     const path = event.target.value;
         if (path) {
@@ -77,6 +88,7 @@ export default function Navbar() {
                             <FontAwesomeIcon icon={faSearch} />
                         </button>
                     </div>
+                    {isLoggedIn && <p>{user?.username}</p>}
                     <div className="auth-container">
                         <button
                             onClick={toggleAuthMenu}
@@ -86,8 +98,17 @@ export default function Navbar() {
                             <FontAwesomeIcon icon={faUser} />
                         </button>
                         <div className={`auth-menu ${isAuthMenuOpen ? "active" : ""}`}>
-                            <Link to="/login" onClick={toggleAuthMenu}>Entrar</Link>
-                            <Link to="/create-account" onClick={toggleAuthMenu}>Criar Conta</Link>
+                            {isLoggedIn ? (
+                                <>
+                                    <Link to="/edit-user" onClick={toggleAuthMenu}>Editar Perfil</Link>
+                                    <Link to="/" onClick={handleLogout}>Sair</Link>
+                                </>
+                            ) : (
+                                <>
+                                    <Link to="/login" onClick={toggleAuthMenu}>Entrar</Link>
+                                    <Link to="/create-account" onClick={toggleAuthMenu}>Criar Conta</Link>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>

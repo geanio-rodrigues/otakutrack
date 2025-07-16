@@ -1,16 +1,32 @@
 import { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuthStore from "../components/authStore";
 
 export default function CreateAccount() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const createAccount = useAuthStore((state) => state.createAccount);
+
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Usuário criado com:', { email, password });
-        alert(`Conta Criada!`);
+        
+        if (password !==confirmPassword){
+            alert("As senhas deve ser iguais");
+            return;
+        }
+        try {
+            createAccount({ email, password });
+            alert(`Conta para ${email} criada com sucesso!`);
+            navigate('/');   
+        } catch(error) {
+            alert(error.message);
+        }
+
     };
+
     return (
         <Fragment>
             <main className="flex-grow flex flex-col items-center justify-center min-h-[75vh]">

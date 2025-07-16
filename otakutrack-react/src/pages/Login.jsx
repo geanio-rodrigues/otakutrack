@@ -1,15 +1,25 @@
 import { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuthStore from "../components/authStore";
 
 export default function Home() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const login = useAuthStore((state) => state.login);
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Tentativa de login com:', { email, password });
-        alert(`Login com: ${email}`);
+        try {
+            login({ email, password });
+            alert(`Login bem-sucedido com: ${email}`);
+            navigate('/edit-user');
+        } catch(error) {
+            alert(error.message);
+            console.error('Falha no login:', error);
+        }
     };
+
     return (
         <Fragment>
             <main className="flex-grow flex flex-col items-center justify-center min-h-[75vh]">
