@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import Cards from '../components/Cards';
 import { navItems } from '../components/navItems';
 
-// Função para buscar os gêneros
 async function findAllGenres() {
   const url = 'https://api.jikan.moe/v4/genres/anime?filter=genres';
   try {
@@ -22,7 +21,6 @@ export default function Category() {
   const [animes, setAnimes] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Função para o nome da categora
   function getCategoryName() {
 
     const dropdown = navItems
@@ -39,7 +37,6 @@ export default function Category() {
 
   useEffect(() => {
 
-    // Função para montar mais de uma página (cada página contém 25 animes);
     async function fetchPaginetedData(baseUrl, totalPages = 3) {
       let allItems = [];
 
@@ -49,8 +46,8 @@ export default function Category() {
           const response = await fetch(pageUrl);
 
           if(response.status === 429) {
-            await new Promise(resolve => setTimeout(resolve, 2000)); // Esperar 2 segundos em caso de erro por muitas requisições
-            page--; // Tentar a mesma página novamente
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            page--;
             continue;
           }
           
@@ -59,11 +56,10 @@ export default function Category() {
             allItems.push(...pageData.data);
           }
 
-          await new Promise(resolve => setTimeout(resolve, 500)) // Pausa entre as requisições
+          await new Promise(resolve => setTimeout(resolve, 500))
 
         } catch (error) {
           console.error(`Falha ao buscar a página ${page}:`, error);
-          break; // Interromper o loop em caso de erro
         }
       }
 
@@ -72,27 +68,23 @@ export default function Category() {
 
     async function fetchAnimes() {
       setLoading(true);
-      setAnimes([]); // Limpa a lista anterior ao buscar uma nova categoria
+      setAnimes([]);
 
       let url = '';
 
-      // Casos especiais, novidades e populares
       if (category === 'new') {
         url = `https://api.jikan.moe/v4/anime?order_by=start_date&sort=desc&type=tv`;
       } else if (category === 'popular') {
         url = `https://api.jikan.moe/v4/anime?order_by=members&sort=desc`;
       } else {
-        // Se não for caso especial é um gênero, primeiro buscar na lista de gêneros.
         const genre = await findAllGenres();
         const findedGenre = genre.find(
           (g) => g.name.toLowerCase() === category.toLowerCase()
         );
 
         if(findedGenre) {
-          // Se o gênero for encontrado usar seu ID para montar a URL
           url = `https://api.jikan.moe/v4/anime?genres=${findedGenre.mal_id}&order_by=score&sort=desc`
         } else {
-          // Caso o gênero da URL não exista na API
           console.error(`Gênero '${category}' não encontrado`);
           return;
         }
