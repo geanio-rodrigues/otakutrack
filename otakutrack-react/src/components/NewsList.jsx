@@ -41,6 +41,7 @@ const NewsList = () => {
   const [slider] = useKeenSlider({
     loop: true,
     mode: 'free-snap',
+   
     slides: {
       perView: 1,
       spacing: 15,
