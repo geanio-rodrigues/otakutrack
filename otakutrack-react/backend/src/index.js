@@ -1,31 +1,39 @@
-import 'dotenv/config';
-import express from 'express';
-import cors from 'cors';
-import { PrismaClient } from '@prisma/client';
+import express from "express";
+import dotenv from "dotenv";
+import { PrismaClient } from './generated/prisma/index.js';
+import authRoutes from "./routes/auth.js";
+import { authenticateToken } from "./middleware/auth.js";
 
+dotenv.config();
 const app = express();
 const prisma = new PrismaClient();
+const PORT = process.env.PORT || 3000;
 
-app.use(cors());
 app.use(express.json());
 
-// Rota de teste para ver usuários
-app.get('/users', async (req, res) => {
-  const users = await prisma.user.findMany();
-  res.json(users);
+// Rotas de autenticação
+app.use("/auth", authRoutes);
+
+// Teste de servidor
+app.get("/", (req, res) => {
+  res.send("Servidor rodando");
 });
 
-// Rota de teste para ver animes
-app.get('/animes', async (req, res) => {
-  const animes = await prisma.anime.findMany();
-  res.json(animes);
+// Rota protegida - pegar dados do usuário logado
+app.get("/me", authenticateToken, async (req, res) => {
+  try {
+    const user = await prisma.user.findUnique({
+      where: { id: req.user.userId },
+      select: { id: true, name: true, email: true, role: true, createdAt: true }
+    });
+
+    if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ error: "Erro ao buscar usuário" });
+  }
 });
 
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok' });
-});
-
-const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-  console.log(`✅ API rodando em http://localhost:${PORT}`);
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
