@@ -1,35 +1,12 @@
-# 📚 Otaku Track
+# React + Vite
 
-Otaku Track é uma enciclopédia visual interativa focada em animes e mangás, projetada para reunir informações atualizadas e relevantes sobre o universo otaku. A aplicação é uma página web desenvolvida com HTML5, CSS3 e ícones da Font Awesome, com um design responsivo e foco em acessibilidade e usabilidade.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🎯 Objetivo
+Currently, two official plugins are available:
 
-O objetivo principal do projeto é criar uma plataforma que concentre:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- 📰 **Notícias**: Atualizações recentes sobre o mundo dos animes e mangás.
-- ⭐ **Melhores Animes**: Lista de animes com melhores avaliações recentes.
-- 📖 **Melhores Mangás**: Coletânea dos mangás mais bem avaliados da atualidade.
+## Expanding the ESLint configuration
 
-## 🖼️ Prévia do Projeto
-
-A interface é composta por:
-
-- **Cabeçalho com barra de navegação** (logo, botões de navegação por seções.)
-- **Seção de Notícias** com destaque visual e texto informativo.
-- **Cartões de Animese Mangás Populares** exibindo título, imagem e avaliação média.
-- **Rodapé com direitos autorais**.
-
-## 🛠️ Tecnologias Utilizadas
-
-- **HTML5**
-- **CSS3**
-- **Google Fonts** (`Quicksand` e `Roboto Condensed`)
-- **Font Awesome**
-- **Design Responsivo com Media Queries**
-
-## 💡 Funcionalidades
-
-- Busca simulada (campo de input e botão de busca).
-- Layout adaptável a dispositivos móveis (responsivo).
-- Destaque visual em interações com hover.
-- Organização por categorias.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
