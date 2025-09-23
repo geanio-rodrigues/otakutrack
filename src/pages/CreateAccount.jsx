@@ -1,16 +1,16 @@
 import { Fragment, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import useAuthStore from "../components/authStore";
+import {register} from "../services/auth";
 
 export default function CreateAccount() {
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const createAccount = useAuthStore((state) => state.createAccount);
 
     const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         
         if (password !==confirmPassword){
@@ -18,9 +18,13 @@ export default function CreateAccount() {
             return;
         }
         try {
-            createAccount({ email, password });
-            alert(`Conta para ${email} criada com sucesso!`);
-            navigate('/');   
+            const user = await register(name, email, password);
+            if(user){
+                alert(`Conta para ${email} criada com sucesso!`);
+                navigate('/');   
+            } else {
+                alert(`Erro ao cadastrar, tente novamente!`);
+            }
         } catch(error) {
             alert(error.message);
         }
@@ -37,6 +41,24 @@ export default function CreateAccount() {
 
                 <div className="w-full max-w-sm">
                     <form onSubmit={handleSubmit} className="w-full flex flex-col gap-8">
+
+                        <div className="relative">
+                            <input
+                                id="name"
+                                name="name"
+                                type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                placeholder=""
+                                className="block w-full px-0 py-2 text-white bg-transparent border-0 border-b-2 border-white appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            />
+                            <label
+                                htmlFor="name"
+                                className="absolute text-base text-gray-500 duration-300 -translate-y-7 scale-75 top-0 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7"
+                            >
+                                Digite seu Nome
+                            </label>
+                        </div>
 
                         <div className="relative">
                             <input

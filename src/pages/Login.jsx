@@ -1,19 +1,22 @@
 import { Fragment, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import useAuthStore from "../components/authStore";
+import { login } from "../services/auth";
 
 export default function Home() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const login = useAuthStore((state) => state.login);
     const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            login({ email, password });
-            alert(`Login bem-sucedido com: ${email}`);
-            navigate('/edit-user');
+            const user = await login(email, password);
+            if(user) {
+                navigate('/edit-user');                
+                alert(`Login bem-sucedido com: ${email}`);
+            } else {
+                alert(`Usuário ou Senha inválidos!`);
+            }
         } catch(error) {
             alert(error.message);
             console.error('Falha no login:', error);
