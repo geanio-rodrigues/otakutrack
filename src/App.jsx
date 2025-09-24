@@ -12,6 +12,7 @@ import New from './pages/New';
 import Popular from './pages/Popular'
 import Category from './pages/Category';
 import EditUser from './pages/EditUser';
+import Favorites from './pages/Favorites';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/create-account" element={<CreateAccount />} />
               <Route path="/edit-user" element={<EditUser />} />
+              <Route path="/favorites" element={<Favorites />} />
           </Routes>
         </main>
       <Footer />

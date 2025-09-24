@@ -130,6 +130,7 @@ export default function Navbar() {
                             {isLoggedIn ? (
                                 <>
                                     <Link to="/edit-user" onClick={toggleAuthMenu}>Editar Perfil</Link>
+                                    <Link to="/favorites" onClick={toggleAuthMenu}>Favoritos</Link>
                                     <Link to="/" onClick={handleLogout}>Sair</Link>
                                 </>
                             ) : (
