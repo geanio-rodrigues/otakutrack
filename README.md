@@ -79,7 +79,7 @@ Antes de começar, você precisará ter as seguintes ferramentas instaladas em s
 
 1.  **Clone o repositório**
     ```sh
-    git clone
+    git clone https://github.com/geanio-rodrigues/otakutrack
     ```
 
 2.  **Configure o Backend**
