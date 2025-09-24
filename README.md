@@ -79,8 +79,7 @@ Antes de começar, você precisará ter as seguintes ferramentas instaladas em s
 
 1.  **Clone o repositório**
     ```sh
-    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-    cd seu-repositorio
+    git clone
     ```
 
 2.  **Configure o Backend**
