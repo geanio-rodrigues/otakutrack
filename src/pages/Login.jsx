@@ -82,7 +82,7 @@ export default function Home() {
                                 type="submit"
                                 className="w-50 size-8 text-base font-medium text-white bg-logored rounded-lg hover:bg-bgblue"
                             >
-                                Criar Conta
+                                Entrar
                             </button>
                             <p className="text-sm text-center text-gray-500">
                                 Não tem uma conta?{' '}
