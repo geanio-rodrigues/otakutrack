@@ -35,3 +35,13 @@ export const getMe = async () => {
 
     return response.data;
 };
+
+// Editar usuário
+export const update = async (id, name) => {
+    const response = await api.put("/user", {
+        id,
+        name
+    });
+
+    return response.data;
+}

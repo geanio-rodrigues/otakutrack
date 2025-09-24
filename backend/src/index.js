@@ -4,6 +4,7 @@ import cors from "cors";
 
 import { PrismaClient } from './generated/prisma/index.js';
 import authRoutes from "./routes/auth.js";
+import Routes from "./routes/user.js";
 import { authenticateToken } from "./middleware/auth.js";
 
 dotenv.config();
@@ -44,6 +45,9 @@ app.use(express.json());
 
 // Rotas de autenticação
 app.use("/auth", authRoutes);
+
+// Rotas para editar usuário e adicionar/remover favoritos
+app.use("/", Routes);
 
 // Teste de servidor
 app.get("/", (req, res) => {
