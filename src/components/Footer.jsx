@@ -13,7 +13,6 @@ function Footer() {
                 <div className="footer-column">
                     <h4>Navegação</h4>
                     <ul>
-                        <li><Link to="/news">Últimas Notícias</Link></li>
                         <li><Link to="/popular">Animes Populares</Link></li>
                         <li><Link to="/new">Animes Novos</Link></li>
                     </ul>
