@@ -12,7 +12,8 @@ export default function Home() {
         try {
             const user = await login(email, password);
             if(user) {
-                navigate('/edit-user');                
+                navigate('/');
+                window.location.reload();                
                 alert(`Login bem-sucedido com: ${email}`);
             } else {
                 alert(`Usuário ou Senha inválidos!`);

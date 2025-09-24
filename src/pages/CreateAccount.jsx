@@ -21,7 +21,7 @@ export default function CreateAccount() {
             const user = await register(name, email, password);
             if(user){
                 alert(`Conta para ${email} criada com sucesso!`);
-                navigate('/');   
+                navigate('/login');   
             } else {
                 alert(`Erro ao cadastrar, tente novamente!`);
             }

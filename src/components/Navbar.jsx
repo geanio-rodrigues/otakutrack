@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faSearch, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { navItems } from "./navItems";
-import useAuthStore from "./authStore";
+import { getMe } from "../services/auth";
 
 import logoDesktop from "../assets/logo/logo.png";
 import logoMobile from "../assets/logo/logo_ico.png";
@@ -13,15 +13,29 @@ import logoMobile from "../assets/logo/logo_ico.png";
 export default function Navbar() {
     const [isAuthMenuOpen, setAuthMenuOpen] = useState(false);
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-    
-    const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
-    const user = useAuthStore((state) => state.user);
-    const logout = useAuthStore((state) => state.logout);
+    const [user, setUser] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     const navigate = useNavigate();
 
+    useEffect(() => {
+        async function loadUser() {
+            try {
+                const userData = await getMe();
+                setUser(userData);
+            } catch (error) {
+                console.error("Erro ao buscar usuário:", error);
+            } finally {
+                setIsLoading(false);
+            }
+        }
+
+        loadUser();
+    }, []);
+
     const handleLogout = () => {
-        logout();
+        localStorage.removeItem('token');
+        setUser(false);
         toggleAuthMenu();
     }
 
@@ -43,6 +57,19 @@ export default function Navbar() {
         if (isAuthMenuOpen) setAuthMenuOpen(false);
         setMobileMenuOpen(!isMobileMenuOpen);
     };
+
+    // Verifica se tem algum usuário logado
+    const isLoggedIn = !!user;
+
+    if(isLoading) {
+        return (
+            <header>
+                <nav className="navbar">
+                    <div className="nav-loading">Carregando...</div>
+                </nav>
+            </header>
+        )
+    }
 
 
     return (
@@ -88,7 +115,9 @@ export default function Navbar() {
                             <FontAwesomeIcon icon={faSearch} />
                         </button>
                     </div>
-                    {isLoggedIn && <p>{user?.username}</p>}
+
+                    {isLoggedIn && <p>{user?.name}</p>}
+                
                     <div className="auth-container">
                         <button
                             onClick={toggleAuthMenu}
