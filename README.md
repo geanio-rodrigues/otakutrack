@@ -146,8 +146,31 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ## 👨‍💻 Autores
 
-| :---: | :--- |
-| [<img src="https://github.com/Paiva91.png?size=80" width="80px" alt="Dárcio" style="border-radius:50%">](https://github.com/Paiva91) | **[Dárcio](https://github.com/Paiva91)** |
-| [<img src="https://github.com/geanio-rodrigues.png?size=80" width="80px" alt="Geanio" style="border-radius:50%">](https://github.com/geanio-rodrigues) | **[Geanio Rodrigues](https://github.com/geanio-rodrigues)** |
-| [<img src="https://github.com/kiyohiroleo.png?size=80" width="80px" alt="Leandro" style="border-radius:50%">](https://github.com/kiyohiroleo) | **[Leandro](https://github.com/kiyohiroleo)** |
-| [<img src="https://github.com/vtgabrielcastro.png?size=80" width="80px" alt="Victor" style="border-radius:50%">](https://github.com/vtgabrielcastro) | **[Victor Gabriel](https://github.com/vtgabrielcastro)** |
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Paiva91">
+        <img src="https://github.com/Paiva91.png?size=100" width="100px;" alt="Dárcio Henrique"/><br />
+        <sub><b>Dárcio Henrique</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/geanio-rodrigues">
+        <img src="https://github.com/geanio-rodrigues.png?size=100" width="100px;" alt="Geanio Rodrigues"/><br />
+        <sub><b>Geanio Rodrigues</b></sub>
+      </a>
+    </td>
+     <td align="center">
+      <a href="https://github.com/kiyohiroleo">
+        <img src="https://github.com/kiyohiroleo.png?size=100" width="100px;" alt="Leandro Quintela"/><br />
+        <sub><b>Leandro Quintela</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/vtgabrielcastro">
+        <img src="https://github.com/vtgabrielcastro.png?size=100" width="100px;" alt="Victor Gabriel"/><br />
+        <sub><b>Victor Gabriel</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
